@@ -5,26 +5,17 @@ package com.zy.mvvm.model.protocol;
  * @date:2020/11/12
  */
 public class UserEntity {
-    private Long id;
+    private int id;
     private String username;
-    private int age;
     private String pwd;
+    private String sex;
+    private String brithday;
 
-    public UserEntity(Long id, String username, int age, String pwd) {
-        this.id = id;
-        this.username = username;
-        this.age = age;
-        this.pwd = pwd;
-    }
-
-    public UserEntity() {
-    }
-
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -36,14 +27,6 @@ public class UserEntity {
         this.username = username;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public String getPwd() {
         return pwd;
     }
@@ -52,13 +35,19 @@ public class UserEntity {
         this.pwd = pwd;
     }
 
-    @Override
-    public String toString() {
-        return "UserEntity{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", age=" + age +
-                ", pwd='" + pwd + '\'' +
-                '}';
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getBrithday() {
+        return brithday;
+    }
+
+    public void setBrithday(String brithday) {
+        this.brithday = brithday;
     }
 }

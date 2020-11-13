@@ -6,9 +6,6 @@
         <variable
             name="test"
             type="com.zy.mvvm.viewmodel.UserCenterViewModel" />
-        <variable
-            name="handlers"
-            type="com.zy.mvvm.ui.MainActivity" />
     </data>
 
     <LinearLayout
@@ -26,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></EditText>
         <Button
-            android:onClick="@{handlers::onLoginClick}"
+            app:onClick="@{test.onRegisterCmd}"
             android:text="注册"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></Button>

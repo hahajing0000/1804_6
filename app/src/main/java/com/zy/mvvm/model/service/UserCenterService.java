@@ -2,8 +2,11 @@ package com.zy.mvvm.model.service;
 
 import android.os.SystemClock;
 
+import com.zy.mvvm.model.api.UserCenterApi;
 import com.zy.mvvm.model.protocol.UserEntity;
 import com.zy.mvvmcore.base.IModel;
+import com.zy.net.RetrofitFactory;
+import com.zy.net.protocol.resp.BaseRespEntity;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -14,11 +17,7 @@ import androidx.lifecycle.MutableLiveData;
  */
 public class UserCenterService implements IModel {
 
-    public LiveData<UserEntity> register(UserEntity userEntity){
-        //访问网络
-        SystemClock.sleep(1000);
-        MutableLiveData<UserEntity> data= new MutableLiveData<>();
-        data.setValue(new UserEntity(0L,"小光",21,""));
-        return data;
+    public LiveData<BaseRespEntity<UserEntity>> register(UserEntity userEntity){
+       return RetrofitFactory.getInstance().create(UserCenterApi.class).register(userEntity);
     }
 }

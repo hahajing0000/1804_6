@@ -3,6 +3,7 @@ package com.zy.mvvm.repository;
 import com.zy.mvvm.model.protocol.UserEntity;
 import com.zy.mvvm.model.service.UserCenterService;
 import com.zy.mvvmcore.base.BaseRepository;
+import com.zy.net.protocol.resp.BaseRespEntity;
 
 import androidx.lifecycle.LiveData;
 
@@ -16,7 +17,7 @@ public class UserCenterRepository extends BaseRepository<UserCenterService> {
         mModel=new UserCenterService();
     }
 
-    public LiveData<UserEntity> register(UserEntity entity){
+    public LiveData<BaseRespEntity<UserEntity>> register(UserEntity entity){
         return mModel.register(entity);
     }
 }

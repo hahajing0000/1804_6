@@ -3,11 +3,16 @@ apply from :"gradles/Config.gradle"
 
 buildscript {
     repositories {
+        google()
+        jcenter()
         maven {
-            url 'http://192.168.99.100:8082/artifactory/group_android/'
+            url 'https://maven.google.com/'
+            name 'Google'
         }
-//        maven { url 'https://jitpack.io' }
-//        maven { url "https://maven.google.com"}
+        maven{
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+        }
+
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.0"
@@ -19,11 +24,18 @@ buildscript {
 
 allprojects {
     repositories {
-        maven {
-            url 'http://192.168.99.100:8082/artifactory/group_android/'
-        }
+        google()
+        jcenter()
 //        maven { url 'https://jitpack.io' }
 //        maven { url "https://maven.google.com"}
+
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        maven{
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+        }
     }
 }
 

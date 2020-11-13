@@ -1,9 +1,14 @@
 package com.zy.mvvm.viewmodel;
 
+import android.util.Log;
+
 import com.zy.common.app.AppUtils;
 import com.zy.mvvm.model.protocol.UserEntity;
 import com.zy.mvvm.repository.UserCenterRepository;
 import com.zy.mvvmcore.base.BaseViewModel;
+import com.zy.mvvmcore.cmd.BindCmd;
+import com.zy.mvvmcore.cmd.actionfunc.Action0;
+import com.zy.net.protocol.resp.BaseRespEntity;
 
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LiveData;
@@ -44,12 +49,20 @@ public class UserCenterViewModel extends BaseViewModel<UserCenterRepository> {
     }
 
     public void register(){
-        mRepository.register(dataSource.getValue()).observe(mOwner, new Observer<UserEntity>() {
+        mRepository.register(dataSource.getValue()).observe(mOwner, new Observer<BaseRespEntity<UserEntity>>() {
             @Override
-            public void onChanged(UserEntity entity) {
-                dataSource.setValue(entity);
+            public void onChanged(BaseRespEntity<UserEntity> entity) {
+                dataSource.setValue(entity.getData());
             }
         });
 
     }
+
+    public BindCmd onRegisterCmd=new BindCmd(new Action0() {
+        @Override
+        public void Execute() {
+            Log.d("123","123123");
+            register();
+        }
+    });
 }

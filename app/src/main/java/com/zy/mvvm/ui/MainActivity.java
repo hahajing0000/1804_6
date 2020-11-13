@@ -12,13 +12,14 @@ import com.zy.mvvm.databinding.ActivityMainBinding;
 import com.zy.mvvm.model.protocol.UserEntity;
 import com.zy.mvvm.viewmodel.UserCenterViewModel;
 import com.zy.mvvmcore.base.BaseMVVMActivity;
+import com.zy.mvvmcore.cmd.BindCmd;
+import com.zy.mvvmcore.cmd.actionfunc.Action0;
 
 public class MainActivity extends BaseMVVMActivity<ActivityMainBinding, UserCenterViewModel> {
 
 
     @Override
     protected void initData() {
-        binding.setHandlers(this);
     }
 
     @Override
@@ -47,7 +48,5 @@ public class MainActivity extends BaseMVVMActivity<ActivityMainBinding, UserCent
     }
 
 
-    public void onLoginClick(View view){
-        viewModel.register();
-    }
+
 }
