@@ -6,6 +6,8 @@ buildscript {
         maven {
             url 'http://192.168.99.100:8082/artifactory/group_android/'
         }
+//        maven { url 'https://jitpack.io' }
+//        maven { url "https://maven.google.com"}
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.0"
@@ -20,6 +22,8 @@ allprojects {
         maven {
             url 'http://192.168.99.100:8082/artifactory/group_android/'
         }
+//        maven { url 'https://jitpack.io' }
+//        maven { url "https://maven.google.com"}
     }
 }
 

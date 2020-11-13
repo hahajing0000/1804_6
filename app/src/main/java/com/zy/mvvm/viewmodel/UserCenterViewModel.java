@@ -1,5 +1,6 @@
 package com.zy.mvvm.viewmodel;
 
+import com.zy.common.app.AppUtils;
 import com.zy.mvvm.model.protocol.UserEntity;
 import com.zy.mvvm.repository.UserCenterRepository;
 import com.zy.mvvmcore.base.BaseViewModel;
@@ -23,6 +24,7 @@ public class UserCenterViewModel extends BaseViewModel<UserCenterRepository> {
     }
 
     public MutableLiveData<UserEntity> getDataSource() {
+
         return dataSource;
     }
 
