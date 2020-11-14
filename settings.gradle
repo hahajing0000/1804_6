@@ -1,3 +1,4 @@
+include ':Wiget'
 include ':Net'
 include ':Common'
 include ':MVVMCore'
